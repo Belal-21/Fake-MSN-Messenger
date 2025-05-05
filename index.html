@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fake MSN Messenger</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="messenger-window">
+    <div class="title-bar">
+      <img src="icons/Msnicon.png" alt="MSN Icon" class="msn-icon">
+      MSN Messenger <span class="right">✕</span>
+    </div>
+    <div class="status-bar">
+      <span>Status:</span>
+      <select id="status-dropdown">
+        <option value="online">Online</option>
+        <option value="busy">Busy</option>
+        <option value="away">Away</option>
+        <option value="offline">Offline</option>
+      </select>
+      <input type="text" id="status-message" placeholder="Set a status message...">
+    </div>
+    <div class="main-layout">
+      <div class="contact-list">
+        <div class="contact online" onclick="openChat('Alex')">
+          <span>😎 Alex</span>
+        </div>
+        <div class="contact offline">
+          <span>😂 Bob (Offline)</span>
+        </div>
+        <div class="contact group" onclick="openChat('School')">
+          <span>🏫 School (Group Chat)</span>
+        </div>
+        <div class="contact online" onclick="openChat('Mazen')">
+          <span>🤔 Mazen</span>
+        </div>
+        <div class="contact online" onclick="openChat('Belal')">
+          <span>👨‍💻 Belal</span>
+        </div>
+        <div class="contact online" onclick="openChat('Hacker')">
+          <span>💻 Hacker</span>
+        </div>
+        <div class="contact online" onclick="openChat('Mom')">
+          <span>👩 Mom</span>
+        </div>
+        <div class="contact online" onclick="openChat('Dad')">
+          <span>👨 Dad</span>
+        </div>
+        <div class="contact online" onclick="openChat('Teacher')">
+          <span>📚 Teacher</span>
+        </div>
+        <div class="contact online" onclick="openChat('Bully')">
+          <span>😡 Bully</span>
+        </div>
+        <!-- Add more contacts here -->
+      </div>
+      <div id="chat-window" class="chat-window hidden">
+        <div class="chat-title-bar">
+          Chat with <span id="chat-name">Alice</span>
+          <button id="nudge-button" onclick="sendNudge()">Nudge</button>
+          <span class="right" onclick="closeChat()">✕</span>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+          <div class="message">Alice: Hi!</div>
+        </div>
+        <div class="chat-input">
+          <input type="text" id="msg-input" placeholder="Type a message...">
+          <button onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
